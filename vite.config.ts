@@ -4,7 +4,9 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "./", // هذا السطر السحري يجعل المسارات نسبية ويقضي على الشاشة البيضاء في الهاتف والويب معاً
+  // مسارات نسبية (./) فقط لبناء تطبيق الموبايل (Capacitor يفتح الملفات عبر file://)
+  // مسارات مطلقة (/) لبناء الويب (Netlify/Vercel) حتى يعمل التوجيه للمسارات المتداخلة مثل /dashboard/customer
+  base: mode === "capacitor" ? "./" : "/",
   plugins: [react()], 
   server: {
     host: "::",
