@@ -1,0 +1,13 @@
+# App Store Connect metadata template for English (US)
+# Replace placeholder values with your production app details.
+
+title: NexusYemen — Marketplace & Services
+subtitle: Local marketplace and delivery for Yemen
+description: NexusYemen connects buyers and sellers across Yemen with secure in-app payments, chat, order tracking, and seller tools.
+keywords: marketplace, shopping, delivery, services, local, yemen, seller, buyer
+support_url: https://your-domain.example.com/support
+marketing_url: https://your-domain.example.com
+privacy_url: https://your-domain.example.com/privacy
+promotional_text: Discover local services, shop securely, and manage orders in Yemen.
+
+# NOTE: Use the linked screenshot assets from fastlane/metadata/ios/en-US/screenshots/.

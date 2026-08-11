@@ -1,0 +1,22 @@
+Android Play Store image mapping
+
+Place these image assets under `fastlane/metadata/android/en-US/images/`:
+
+- featureGraphic.png
+  * Google Play feature graphic
+  * Recommended size: 1024x500
+
+- graphic.png
+  * Play Store promotional graphic / icon background
+  * Recommended size: 1024x500
+
+- phoneScreenshots/0.png
+- phoneScreenshots/1.png
+- phoneScreenshots/2.png
+  * Phone screenshot placeholders
+  * Recommended size: 1080x1920 or 1242x2208
+
+Additional asset notes:
+- Use landscape or portrait screenshots that demonstrate app features.
+- Replace placeholder PNGs with production artwork before upload.
+- For localized variants, duplicate the `en-US` folder under `metadata/android/` with the locale code.

@@ -1,0 +1,3 @@
+Release notes:
+- Production-ready build with performance improvements and offline-first fixes.
+- Updated Android/iOS build pipeline and splash screen consistency.

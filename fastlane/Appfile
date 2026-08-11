@@ -1,0 +1,7 @@
+# fastlane Appfile: central place to set app identifiers
+
+app_identifier "com.safir.nexusyemen" # iOS bundle identifier
+apple_id "your-apple-id@example.com"
+
+# Android package name is set in Gradle; Play credentials are provided to `supply` via ENV or JSON
+

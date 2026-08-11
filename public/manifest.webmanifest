@@ -1,0 +1,15 @@
+{
+  "name": "CiAR",
+  "short_name": "CiAR",
+  "description": "€قك الأول إلى عالم التسوق - تسوق من مكانك، معنا مستقبلك أفضل",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0510",
+  "theme_color": "#4B0082",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    { "src": "/placeholder.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

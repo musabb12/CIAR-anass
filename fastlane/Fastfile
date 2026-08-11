@@ -1,0 +1,39 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Build and upload iOS App Store release"
+  lane :release do
+    UI.message("🚀 Building iOS release...")
+    build_app(scheme: ENV['IOS_SCHEME'] || 'App', export_options: './fastlane/ExportOptions.plist')
+    upload_to_app_store(skip_screenshots: true, skip_metadata: true)
+  end
+
+  desc "Build and upload iOS to TestFlight (beta)"
+  lane :beta do
+    build_app(scheme: ENV['IOS_SCHEME'] || 'App', export_options: './fastlane/ExportOptions.plist')
+    pilot
+  end
+end
+
+platform :android do
+  desc "Assemble Android release and upload to Play Store (requires service account JSON)"
+  lane :release do
+    UI.message("🔧 Assembling Android release...")
+    gradle(task: 'assembleRelease')
+    # Path depends on Gradle output; adjust if using AAB
+    apk_path = './android/app/build/outputs/apk/release/app-release.apk'
+    aab_path = './android/app/build/outputs/bundle/release/app-release.aab'
+    if File.exist?(aab_path)
+      supply(track: ENV['PLAY_STORE_TRACK'] || 'internal', aab: aab_path)
+    elsif File.exist?(apk_path)
+      supply(track: ENV['PLAY_STORE_TRACK'] || 'internal', apk: apk_path)
+    else
+      UI.user_error!("No APK/AAB found. Run ./gradlew assembleRelease or bundleRelease first.")
+    end
+  end
+
+  desc "Assemble Android debug (local testing)"
+  lane :debug do
+    gradle(task: 'assembleDebug')
+  end
+end

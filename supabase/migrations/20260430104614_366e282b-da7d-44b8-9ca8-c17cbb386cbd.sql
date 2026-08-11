@@ -1,0 +1,2 @@
+ALTER TABLE public.stores ADD COLUMN IF NOT EXISTS category_id uuid REFERENCES public.categories(id) ON DELETE SET NULL;
+CREATE INDEX IF NOT EXISTS idx_stores_category_id ON public.stores(category_id);

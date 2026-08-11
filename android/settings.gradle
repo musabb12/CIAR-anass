@@ -1,0 +1,5 @@
+rootProject.name = 'android'
+include ':app'
+
+// استدعاء وربط ملحقات الـ Capacitor تلقائياً
+apply from: 'capacitor.settings.gradle'
